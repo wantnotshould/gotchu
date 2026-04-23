@@ -1,0 +1,77 @@
+/* pages/detail/detail.wxss */
+page {
+  background-color: var(--bg);
+}
+
+.container {
+  padding: 26rpx;
+}
+
+.form-card {
+  background: var(--bg);
+  border-radius: 16rpx;
+  padding: 0 26rpx;
+  margin-bottom: 57rpx;
+  border: 2rpx solid var(--border);
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+  padding: 26rpx 0;
+  border-bottom: 1rpx solid var(--border);
+}
+
+.form-item:last-child {
+  border-bottom: none;
+}
+
+.form-item .label {
+  width: 168rpx;
+  font-size: 28rpx;
+  color: var(--text);
+}
+
+.form-item input {
+  flex: 1;
+  font-size: 28rpx;
+  color: var(--text);
+}
+
+.secret-item {
+  justify-content: space-between;
+}
+
+.secret-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.info-only .value {
+  color: var(--second-text);
+  font-size: 28rpx;
+}
+
+.btn-group {
+  display: flex;
+  gap: 30rpx;
+}
+
+.btn-save {
+  background: var(--success);
+  color: #fff;
+  border: 1rpx solid var(--success);
+  width: 100%;
+  border-radius: 49rpx;
+  font-weight: normal;
+}
+
+.btn-delete {
+  background: var(--btn);
+  color: var(--danger);
+  border: 1rpx solid var(--danger);
+  width: 100%;
+  border-radius: 49rpx;
+  font-weight: normal;
+}

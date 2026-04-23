@@ -1,0 +1,82 @@
+/* pages/create/create.wxss */
+page {
+  background-color: var(--bg);
+}
+
+.page-container {
+  padding: 26rpx;
+}
+
+.scan-section {
+  background: var(--bg);
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16rpx;
+  border: 2rpx dashed var(--border);
+  margin-bottom: 34rpx;
+}
+
+.scan-section text {
+  color: var(--success);
+  font-size: 49rpx;
+}
+
+.divider {
+  text-align: center;
+  font-size: 26rpx;
+  color: var(--second-text);
+  margin-bottom: 34rpx;
+  position: relative;
+}
+
+.form-card {
+  background: var(--bg);
+  border-radius: 16rpx;
+  padding: 0 26rpx;
+  margin-bottom: 57rpx;
+  border: 2rpx solid var(--border);
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+  padding: 26rpx 0;
+  border-bottom: 1rpx solid var(--border);
+}
+
+.form-item:last-child {
+  border-bottom: none;
+}
+
+.form-item .label {
+  width: 168rpx;
+  font-size: 28rpx;
+  color: var(--text);
+}
+
+.form-item input {
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.value {
+  flex: 1;
+  font-size: 28rpx;
+  color: var(--text);
+}
+
+.radio-label {
+  margin-right: 30rpx;
+  font-size: 28rpx;
+}
+
+.save-btn {
+  background: var(--success);
+  color: #fff;
+  border-radius: 49rpx;
+  font-weight: normal;
+  width: 100%;
+}

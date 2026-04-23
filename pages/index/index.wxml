@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<navigation-bar title="gotchu —— TOTP" back="{{false}}"></navigation-bar>
+
+<scroll-view class="scrollarea" scroll-y type="list" refresher-enabled="{{true}}"
+  bindrefresherrefresh="onPullDownRefresh" refresher-triggered="{{loading}}">
+  <view class="list-container">
+    <view wx:if="{{displayList.length === 0 && !loading}}" class="empty-state">
+      <text>暂无验证码，请点击下方按钮添加</text>
+    </view>
+
+    <view class="card" wx:for="{{displayList}}" wx:key="id" bindtap="onItemTap" bindlongpress="onItemLongPress"
+      data-id="{{item.id}}" data-label="{{item.label}}">
+      <view class="card-header">
+        <text class="label">{{item.label || '未命名'}}</text>
+        <text class="issuer">{{item.issuer || '未知平台'}}</text>
+      </view>
+
+      <view class="card-body">
+        <view class="code-wrapper">
+          <text class="code">{{item.code}}</text>
+        </view>
+
+        <view class="progress-box">
+          <progress percent="{{(item.countdown / (item.period || 30)) * 100}}" stroke-width="3" duration="10" />
+          <text class="time-text">{{item.countdown}}s</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="footer-spacing"></view>
+  </view>
+</scroll-view>
+
+<view class="fab" bindtap="onFabTap">
+  <text class="fab-icon">+</text>
+</view>
