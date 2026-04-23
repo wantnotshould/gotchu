@@ -1,0 +1,46 @@
+<!--pages/detail/detail.wxml-->
+<navigation-bar title="TOTP 详情" back="{{true}}"></navigation-bar>
+
+<view class="container" wx:if="{{item}}">
+  <view class="form-card">
+    <view class="form-item">
+      <text class="label">账号名称</text>
+      <input value="{{item.label}}" data-field="label" bindinput="onInputChange" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">发行方</text>
+      <input value="{{item.issuer}}" data-field="issuer" bindinput="onInputChange" />
+    </view>
+
+    <view class="form-item secret-item">
+      <view class="secret-info">
+        <text class="label">密钥</text>
+        <input password="{{!showSecret}}" value="{{item.secret}}" data-field="secret" bindinput="onInputChange" />
+      </view>
+      <view class="eye-icon" bindtap="toggleSecret">
+        <icon type="{{showSecret ? 'warn' : 'info'}}" color="#59636e" />
+      </view>
+    </view>
+
+    <view class="form-item info-only">
+      <text class="label">位数</text>
+      <text class="value">{{item.digits}}位</text>
+    </view>
+
+    <view class="form-item info-only">
+      <text class="label">算法</text>
+      <text class="value">{{algoRange[item.algorithm - 1]}}</text>
+    </view>
+
+    <view class="form-item info-only">
+      <text class="label">步长 (秒)</text>
+      <text class="value">{{item.period}}s</text>
+    </view>
+  </view>
+
+  <view class="btn-group">
+    <button class="btn-save" bindtap="saveUpdate">保存</button>
+    <button class="btn-delete" bindtap="deleteItem">删除</button>
+  </view>
+</view>

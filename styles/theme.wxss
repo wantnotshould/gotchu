@@ -1,0 +1,48 @@
+/* github 配色 */
+page {
+	--bg: #fff;
+	--tab-bar: #fff;
+	--warning-bg: #fff8c5;
+
+	--accent: #0969da;
+	--primary: var(--accent);
+	--success: #1f883d;
+	--danger: #cf222e;
+
+	--text: #1f2328;
+	--second-text: #59636e;
+	--warning-text: #1f2328;
+
+	--btn: #f6f8fa;
+	--btn-text: #25292e;
+	--btn-primary: var(--primary);
+	--btn-success: var(--success);
+	--btn-danger: var(--danger);
+
+	--border: #d1d9e0;
+}
+
+@media (prefers-color-scheme: dark) {
+	page {
+		--bg: #0d1117;
+		--tab-bar: #010409;
+		--warning-bg: #272116;
+
+		--accent: #4493f8;
+		--primary: var(--accent);
+		--success: #238636;
+		--danger: #b62324;
+
+		--text: #f0f6fc;
+		--second-text: #9198a1;
+		--warning-text: #f0f6fc;
+
+		--btn: #212830;
+		--btn-text: #f0f6fc;
+		--btn-primary: var(--primary);
+		--btn-success: var(--success);
+		--btn-danger: var(--danger);
+
+		--border: #d1d9e0;
+	}
+}
