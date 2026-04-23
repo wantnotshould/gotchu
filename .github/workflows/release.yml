@@ -23,8 +23,6 @@ jobs:
           generate_release_notes: true
           body: ${{ steps.changelog.outputs.changelog }}
           # body: "Binary releases for version ${{ github.ref_name }}"
-          files: dist/*
-          fail_on_unmatched_files: true
           append_body: true
         env:
           GITHUB_TOKEN: ${{ secrets.PUBLIC_WORKFLOWS_ACCESS_TOKEN }}
