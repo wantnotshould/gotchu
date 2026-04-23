@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          generate_release_notes: true
+          body: ${{ steps.changelog.outputs.changelog }}
+          # body: "Binary releases for version ${{ github.ref_name }}"
+          files: dist/*
+          fail_on_unmatched_files: true
+          append_body: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.PUBLIC_WORKFLOWS_ACCESS_TOKEN }}
